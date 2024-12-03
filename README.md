@@ -1,4 +1,4 @@
-# Blueprint Harmony Specs
+# README.md
 
 A powerful application specification generator powered by Claude AI. This tool helps software architects and developers create comprehensive, structured specifications for their applications.
 
