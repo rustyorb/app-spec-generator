@@ -20,7 +20,7 @@ export const generateSpecification = async (appDescription: string): Promise<str
       messages: [
         {
           role: "user",
-          content: `You are an expert software architect tasked with creating a comprehensive application specification. First, suggest a creative and suitable name for this application based on its description. Then, transform this app description into a detailed specification:
+          content: `You are an expert software architect tasked with creating a comprehensive application specification. Based on the description below, first name this application - be creative and decisive in choosing a name that reflects its purpose and vision. Then, create a detailed specification for it:
 
           ${appDescription}
 
