@@ -7,44 +7,55 @@ export const generateSpecification = async (appDescription: string): Promise<str
     throw new Error("API key not found");
   }
 
-  const anthropic = new Anthropic({
-    apiKey: apiKey,
-  });
+  try {
+    const anthropic = new Anthropic({
+      apiKey: apiKey,
+    });
 
-  const response = await anthropic.messages.create({
-    model: "claude-3-sonnet-20240229",
-    max_tokens: 4000,
-    temperature: 0,
-    messages: [
-      {
-        role: "user",
-        content: `You are an expert software architect tasked with creating a comprehensive application specification for Lovable.dev. Transform this app description into a detailed specification:
+    const response = await anthropic.messages.create({
+      model: "claude-3-sonnet-20240229",
+      max_tokens: 4000,
+      temperature: 0,
+      messages: [
+        {
+          role: "user",
+          content: `You are an expert software architect tasked with creating a comprehensive application specification for Lovable.dev. Transform this app description into a detailed specification:
 
-        ${appDescription}
+          ${appDescription}
 
-        Format your response as a structured specification covering:
-        1. Application Overview
-        2. Core Functionality
-        3. UI/UX Specifications
-        4. Technical Architecture
-        5. Integration Points
-        6. Data Models
-        7. Security Requirements
-        8. Development Guidelines
+          Format your response as a structured specification covering:
+          1. Application Overview
+          2. Core Functionality
+          3. UI/UX Specifications
+          4. Technical Architecture
+          5. Integration Points
+          6. Data Models
+          7. Security Requirements
+          8. Development Guidelines
 
-        For each section, provide detailed, practical implementation guidance that aligns with Lovable.dev's React + Vite + TypeScript + Tailwind CSS + shadcn/ui stack.`
-      }
-    ]
-  });
+          For each section, provide detailed, practical implementation guidance that aligns with Lovable.dev's React + Vite + TypeScript + Tailwind CSS + shadcn/ui stack.`
+        }
+      ]
+    });
 
-  // Handle the response content safely
-  if (response.content && response.content.length > 0) {
+    // Check if response has content
+    if (!response.content || response.content.length === 0) {
+      console.error("Empty response from Claude API:", response);
+      throw new Error("Empty response from Claude API");
+    }
+
+    // Get the first content block
     const firstContent = response.content[0];
+
+    // Type guard to check if the content has text property
     if ('text' in firstContent) {
       return firstContent.text;
     }
+    
+    console.error("Unexpected response format:", firstContent);
+    throw new Error("Unexpected response format from Claude API");
+  } catch (error) {
+    console.error("Error calling Claude API:", error);
+    throw error;
   }
-  
-  // If we can't get the text content, return an error message
-  return "Error: Unable to generate specification. Unexpected response format.";
 };
