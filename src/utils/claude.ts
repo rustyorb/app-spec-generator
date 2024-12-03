@@ -10,6 +10,7 @@ export const generateSpecification = async (appDescription: string): Promise<str
   try {
     const anthropic = new Anthropic({
       apiKey: apiKey,
+      dangerouslyAllowBrowser: true // Add this option to allow browser usage
     });
 
     const response = await anthropic.messages.create({
