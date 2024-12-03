@@ -1,6 +1,6 @@
 # README.md
 
-A powerful application specification generator powered by Claude AI. This tool helps software architects and developers create comprehensive, structured specifications for their applications.
+A powerful application specification generator powered by Claude AI. This tool helps the user create comprehensive, structured specifications for their applications using only a simple, natural language, input.
 
 ## Features
 
