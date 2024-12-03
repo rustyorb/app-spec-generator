@@ -37,5 +37,12 @@ export const generateSpecification = async (appDescription: string): Promise<str
     ]
   });
 
-  return response.content[0].text;
+  // Handle the response content safely
+  const content = response.content[0];
+  if ('text' in content) {
+    return content.text;
+  }
+  
+  // If the content is not text, return an error message
+  return "Error: Unable to generate specification. Unexpected response format.";
 };
