@@ -20,7 +20,11 @@ export const generateSpecification = async (appDescription: string): Promise<str
       messages: [
         {
           role: "user",
-          content: `You are an expert software architect tasked with creating a comprehensive application specification. Based on the description below, first name this application - be creative and decisive in choosing a name that reflects its purpose and vision. Then, create a detailed specification for it:
+          content: `You are an expert software architect tasked with creating a comprehensive application specification. 
+
+IMPORTANT: You must create a NEW, UNIQUE name for this application. DO NOT use "Lovable.dev" or any variation of it. The name should be creative and reflect the application's purpose.
+
+Based on the description below, first generate a unique name for this application, then create a detailed specification for it:
 
           ${appDescription}
 
