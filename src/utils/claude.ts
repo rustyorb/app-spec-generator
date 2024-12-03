@@ -10,7 +10,7 @@ export const generateSpecification = async (appDescription: string): Promise<str
   try {
     const anthropic = new Anthropic({
       apiKey: apiKey,
-      dangerouslyAllowBrowser: true // Add this option to allow browser usage
+      dangerouslyAllowBrowser: true
     });
 
     const response = await anthropic.messages.create({
@@ -20,12 +20,12 @@ export const generateSpecification = async (appDescription: string): Promise<str
       messages: [
         {
           role: "user",
-          content: `You are an expert software architect tasked with creating a comprehensive application specification for Lovable.dev. Transform this app description into a detailed specification:
+          content: `You are an expert software architect tasked with creating a comprehensive application specification. First, suggest a creative and suitable name for this application based on its description. Then, transform this app description into a detailed specification:
 
           ${appDescription}
 
           Format your response as a structured specification covering:
-          1. Application Overview
+          1. Application Name and Overview
           2. Core Functionality
           3. UI/UX Specifications
           4. Technical Architecture
@@ -34,7 +34,7 @@ export const generateSpecification = async (appDescription: string): Promise<str
           7. Security Requirements
           8. Development Guidelines
 
-          For each section, provide detailed, practical implementation guidance that aligns with Lovable.dev's React + Vite + TypeScript + Tailwind CSS + shadcn/ui stack.`
+          For each section, provide detailed, practical implementation guidance that aligns with React + Vite + TypeScript + Tailwind CSS + shadcn/ui stack.`
         }
       ]
     });
