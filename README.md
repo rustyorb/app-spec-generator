@@ -20,8 +20,8 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd blueprint-harmony-specs
+git clone https://github.com/rustyorb/app-spec-generator.git
+cd app-spec-generator
 ```
 
 2. Install dependencies:
