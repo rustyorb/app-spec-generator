@@ -1,69 +1,74 @@
-# Welcome to your Lovable project
+# Blueprint Harmony Specs
 
-## Project info
+A powerful application specification generator powered by Claude AI. This tool helps software architects and developers create comprehensive, structured specifications for their applications.
 
-**URL**: https://lovable.dev/projects/6385e5fc-ed5a-46c7-9d28-0efb79574624
+## Features
 
-## How can I edit this code?
+- 🤖 AI-Powered Specification Generation
+- 🔒 Secure API Key Management
+- 📝 Detailed, Structured Output
+- 🎨 Modern UI with shadcn/ui Components
 
-There are several ways of editing your application.
+## Prerequisites
 
-**Use Lovable**
+Before you begin, ensure you have the following installed:
+- Node.js (v18 or higher)
+- npm (comes with Node.js)
+- A Claude API key from Anthropic
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6385e5fc-ed5a-46c7-9d28-0efb79574624) and start prompting.
+## Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd blueprint-harmony-specs
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Usage
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Configure your Claude API key:
+   - Click on the API Configuration card
+   - Enter your Claude API key
+   - Click "Save Key"
 
-**Use GitHub Codespaces**
+2. Generate a specification:
+   - Enter your app description in the text area
+   - Click "Generate Specification"
+   - View the structured output below
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
+## Tech Stack
 
 - Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- shadcn/ui
+- Claude AI API
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/6385e5fc-ed5a-46c7-9d28-0efb79574624) and click on Share -> Publish.
+To contribute to this project:
 
-## I want to use a custom domain - is that possible?
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue in the GitHub repository.
